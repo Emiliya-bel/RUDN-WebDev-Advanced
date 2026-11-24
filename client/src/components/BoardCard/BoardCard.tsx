@@ -2,15 +2,15 @@ import styles from "./BoardCard.module.css";
 
 type BoardCardProps = {
   title: string;
-  isDone?: boolean;
+  isDone: boolean;
 };
 
 export function BoardCard({ title, isDone }: BoardCardProps) {
   return <div 
-  className={
-    isDone ? styles.isDone : styles.card
-  }
-  >
+  className={isDone ? 
+    styles.isDone : 
+    styles.card
+  }>
     {title}
-    </div>;
+  </div>;
 }
