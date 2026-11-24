@@ -1,37 +1,34 @@
-import {Card} from "../types/card.ts";
+import { Card } from "../types/card.ts";
 
-export let cards: Card[] = [{
-    id: '1',
-    title:'Hello world',
-    isUrgent: false,
-    isDone: false,
-}]
+export let cards: Card[] = [
+    {
+        id: '1',
+        title: 'Hello world',
+        isUrgent: false,
+        isDone: false,
+    }
+];
 
-export function getAllCards(){
+export function getAllCards() {
     return cards;
 }
 
-export function createCard(title: string){
+export function createCard(title: string) {
     const newCard: Card = {
-        id: "",
-        title: "",
+        id: Date.now().toString(),
+        title: title,
         isDone: false,
         isUrgent: false
     };
-
     cards.push(newCard);
-
     return newCard;
 }
 
-export function deleteCard(id: string){
+export function deleteCard(id: string) {
     const newCards = cards.filter(
-        card => card.id !==id
+        card => card.id !== id
     );
-
-    const isDeleted = 
-    newCards.length !== cards.length;
-
+    const isDeleted = newCards.length !== cards.length;
     cards = newCards;
     return isDeleted;
 }
