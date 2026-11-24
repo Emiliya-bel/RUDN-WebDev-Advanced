@@ -19,6 +19,7 @@ export function BoardColumn(props: Props) {
           .map((card) => (
             <BoardCard
               key={card.id}
+              id={card.id}
               title={card.title}
               isDone={card.isDone}
             />
